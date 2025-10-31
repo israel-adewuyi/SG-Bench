@@ -7,10 +7,12 @@ setup(
     author="ZenithX",
     author_email="waltersumbon@gmail.com",
     url="https://github.com/EasyJailbreak/EasyJailbreak",
-    packages=find_packages(),  
+    packages=find_packages() + ['datasets', 'test'],  # Treat as packages even without __init__.py
     include_package_data=True,
     package_data={
         '': ['*.json', '*.txt', '*.yaml', '*.yml'],
+        'datasets': ['**/*'],  # Include everything in datasets
+        'test': ['**/*'],      # Include everything in test
     },
     install_requires=[
         'transformers>=4.34.0',
