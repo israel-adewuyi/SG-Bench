@@ -7,10 +7,10 @@ setup(
     author="ZenithX",
     author_email="waltersumbon@gmail.com",
     url="https://github.com/EasyJailbreak/EasyJailbreak",
-    packages=find_packages(),
-    include_package_data=True,  # Include non-Python files
+    packages=find_packages(),  
+    include_package_data=True,
     package_data={
-        '': ['*.json', '*.txt', '*.yaml', '*.yml', 'datasets/**/*'],  # Include data files
+        '': ['*.json', '*.txt', '*.yaml', '*.yml'],
     },
     install_requires=[
         'transformers>=4.34.0',
