@@ -1,0 +1,10 @@
+recursive-include datasets *
+recursive-include test *
+include LICENSE
+include README.md
+include SafeEval.json
+include github_submit.sh
+include logger.log
+include main_test.py
+include requirements.txt
+include run_eval.sh
