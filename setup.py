@@ -1,13 +1,17 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="easyjailbreak",
+    name="sgbench_toolkit",
     version="0.1.1",
-    description="Easy Jailbreak toolkit",
+    description="SG-Bench toolkit",
     author="ZenithX",
     author_email="waltersumbon@gmail.com",
     url="https://github.com/EasyJailbreak/EasyJailbreak",
-    packages=find_packages(include=('easyjailbreak*',)),
+    packages=find_packages(),
+    include_package_data=True,  # Include non-Python files
+    package_data={
+        '': ['*.json', '*.txt', '*.yaml', '*.yml', 'datasets/**/*'],  # Include data files
+    },
     install_requires=[
         'transformers>=4.34.0',
         'protobuf',
