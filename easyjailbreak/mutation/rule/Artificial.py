@@ -1,8 +1,13 @@
+import os
+
 from typing import List
 from easyjailbreak.mutation import MutationBase
 from easyjailbreak.datasets import Instance
 from easyjailbreak.seed import SeedTemplate
 
+
+current_dir = os.path.dirname(os.path.abspath(__file__)) 
+template_path = os.path.join(current_dir, '../../seed/seed_template.json')
 
 class Artificial(MutationBase):
     """
@@ -17,7 +22,7 @@ class Artificial(MutationBase):
             raise AttributeError(f"Attribute '{self.attr_name}' not found in instance")
         
         mutated_results = []
-        prompt_seeds = SeedTemplate().new_seeds(method_list=['Jailbroken'],template_file="./easyjailbreak/seed/seed_template.json")
+        prompt_seeds = SeedTemplate().new_seeds(method_list=['Jailbroken'],template_file=os.path.abspath(template_path))
         
         for prompt_seed in prompt_seeds:
             new_instance = instance.copy()
